@@ -1,0 +1,20 @@
+<h2>Tarefas</h2>
+
+<h3>Adicionar tarefas</h3>
+
+<p>
+  <label>Titulo</label>
+  <input type="text" #titulo />
+</p>
+
+<button (click)="task.add(titulo.value); titulo.value = ''">
+  Adicionar tarefa
+</button>
+
+<hr />
+
+<h3>Lista de tarefas</h3>
+
+<ul *ngFor="let i of task.getTask(); index as id">
+  <li>{{ i }} <button (click)="task.remove(id)">Remover</button></li>
+</ul>
